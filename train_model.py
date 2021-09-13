@@ -88,7 +88,7 @@ def main_loop(batch_size=config.batch_size, model_type='', tensorboard=True):
         logger.info('transformer head num: {}'.format(config_vit.transformer.num_heads))
         logger.info('transformer layers num: {}'.format(config_vit.transformer.num_layers))
         logger.info('transformer expand ratio: {}'.format(config_vit.expand_ratio))
-        model = UCTransNet(config_vit,n_channels=config.n_channels,n_classes=config.n_labels)
+        model = UCTransNet(config_vit,n_channels=config.n_channels,n_classes=config.n_labels, img_size=config.img_size)
 
     elif model_type == 'UCTransNet_pretrain':
         config_vit = config.get_CTranS_config()
